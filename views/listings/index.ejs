@@ -1,0 +1,219 @@
+<% layout("/layouts/boilerplate") %> 
+
+    <style>
+        .filters-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+        #filters{
+            display: flex;
+            flex-wrap: nowrap;      
+            overflow-x: auto;       
+            scrollbar-width: none;       /* Firefox */
+            align-items: center;
+            width: 80%;
+        }
+
+        #filters::-webkit-scrollbar{
+            display: none;               /* Chrome, Edge, Safari */
+        }
+        .filter{
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 1rem;
+            opacity: 0.7;
+            flex: 0 0 auto;        
+        }
+
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .filter p {
+            font-size: 0.8rem;
+        }
+        .filter{
+             text-decoration: none;
+             color: black;
+        }
+        .tax-info{
+            display: none;
+        }
+        .tax-toggle{
+            cursor: pointer;
+            border:none;
+            border-radius:1rem;    
+            height:3rem;
+            padding:1rem;
+            margin-left:auto;
+
+            display:flex;
+            align-items:center;
+
+            background:white;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);   /* shadow */
+            transition:all 0.2s ease;
+        }
+
+        .tax-toggle:hover{
+            box-shadow:0 6px 20px rgba(0,0,0,0.2);    /* hover shadow */
+        }
+
+        .form-check-label{
+            cursor: pointer;
+        }
+
+        .scroll-btn{
+            border:none;
+            background:white;
+            width:40px;
+            height:40px;
+            border-radius:50%; 
+            box-shadow:0 4px 6px rgba(0,0,0,0.2);
+            cursor:pointer;
+            margin-left: 2rem;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .scroll-btn:hover{
+            box-shadow:0 6px 20px rgba(0,0,0,0.2);    /* hover shadow */
+        }
+
+    </style>
+
+    <div class="filters-wrapper">
+
+<div id="filters">
+
+<a href="/listings/category/Trending" class="filter">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p>Trending</p>
+</a>
+
+<a href="/listings/category/Rooms" class="filter">
+    <div><i class="fa-solid fa-bed"></i></div>
+    <p>Rooms</p>
+</a>
+
+<a href="/listings/category/Budget Friendly" class="filter">
+    <div><i class="fa-solid fa-wallet"></i></div>
+    <p>Budget Friendly</p>
+</a>
+
+<a href="/listings/category/Luxury Stays" class="filter">
+    <div><i class="fa-solid fa-crown"></i></div>
+    <p>Luxury Stays</p>
+</a>
+
+<a href="/listings/category/Island Escape" class="filter">
+    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+    <p>Island Escape</p>
+</a>
+
+<a href="/listings/category/Villas" class="filter">
+    <div><i class="fa-solid fa-house"></i></div>
+    <p>Villas</p>
+</a>
+
+<a href="/listings/category/Lake Side" class="filter">
+    <div><i class="fa-solid fa-water"></i></div>
+    <p>Lake Side</p>
+</a>
+
+<a href="/listings/category/Cabins" class="filter">
+    <div><i class="fa-solid fa-tree"></i></div>
+    <p>Cabins</p>
+</a>
+
+<a href="/listings/category/Entire Homes" class="filter">
+    <div><i class="fa-solid fa-house"></i></div>
+    <p>Entire Homes</p>
+</a>
+
+<a href="/listings/category/Mountain View" class="filter">
+    <div><i class="fa-solid fa-mountain"></i></div>
+    <p>Mountain View</p>
+</a>
+
+<a href="/listings/category/Farmhouses" class="filter">
+    <div><i class="fa-solid fa-tractor"></i></div>
+    <p>Farmhouses</p>
+</a>
+
+<a href="/listings/category/Beachfront" class="filter">
+    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+    <p>Beachfront</p>
+</a>
+
+<a href="/listings/category/Dream Destinations" class="filter">
+    <div><i class="fa-solid fa-location-dot"></i></div>
+    <p>Dream Destinations</p>
+</a>
+<a href="/listings/category/Amezing Pools" class="filter">
+    <div><i class="fa-solid fa-person-swimming"></i></div>
+    <p>Amezing Pools</p>
+</a>
+</div>
+
+        <button class="scroll-btn right" id="scrollRight">
+            <div><i class="fa-solid fa-angles-right"></i></div>
+        </button>
+
+<div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">Display Taxes</label>
+    </div>
+</div>
+
+</div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+         <% for (let listing of allListings) { %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+        <div class="card col listing-card">
+  <!-- <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;" > -->
+  <img src="<%= listing.image.url ? listing.image.url : listing.image %>" class="card-img-top" alt="listing_image"  style="height: 20rem;">
+
+
+  <div class="card-img-overlay"></div>
+  <div class="card-body">
+    <p class="card-text">
+        <b><%= listing.title %></b> <br>
+        <%= listing.price.toLocaleString("en-IN")%>/night
+        <i class="tax-info"> &nbsp; &nbsp; +18% GST</i>
+    </p>
+  </div>
+</div>
+    </a>
+<% } %>
+    </div>
+
+    <script>
+        let taxSwitch = document.getElementById("switchCheckDefault");
+        taxSwitch.addEventListener("click", () => {
+            let taxInfo = document.getElementsByClassName("tax-info");
+            for (info of taxInfo) {
+                if (info.style.display != "inline") {
+                    info.style.display = "inline";
+                } else {
+                    info.style.display = "none";
+                }
+            }
+        });
+
+        let filters = document.getElementById("filters");
+        let scrollRightBtn = document.getElementById("scrollRight");
+
+            scrollRightBtn.addEventListener("click", () => {
+                filters.scrollBy({
+                left: 300,    
+            behavior: "smooth"
+            });
+        });
+
+    </script>
