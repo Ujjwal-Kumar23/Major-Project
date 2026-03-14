@@ -59,9 +59,10 @@ const sessionoptions = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("Hi i am root");
-// });
+// Root route (fixes "Cannot GET /")
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 //Using passport
 app.use(session(sessionoptions));
