@@ -113,6 +113,9 @@ app.use((err, req, res, next) => {
   // res.status(statuscode).send(message);
 });
 
-app.listen(5050, () => {
-  console.log("server is listening to port 5050");
+// Render compatible port
+const port = process.env.PORT || 5050;
+
+app.listen(port, () => {
+  console.log(`server is listening on port ${port}`);
 });
