@@ -4,11 +4,22 @@
     color: #fff;
     border-radius: 25px;
     padding: 0 1rem 0 1rem;
+    transition: all 1.5s ease;
   }
 
   .search-btn:hover{
-    background-color: #fe424d;
-    color: #fff;
+    /* background-color: #fe424d;
+    color: #fff; */
+
+    box-shadow: 
+  0 0 8px #8a2be2,
+  0 0 16px #ff1493,
+  0 0 24px #ff4500,
+  0 0 32px rgba(255, 69, 0, 0.5),
+
+  inset 0 0 8px rgba(138, 43, 226, 0.4),
+  inset 0 0 16px rgba(255, 20, 147, 0.35),
+  inset 0 0 24px rgba(255, 69, 0, 0.3);
   }
 
   .search-btn i {
@@ -18,7 +29,21 @@
   .search-inp{
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
+    transition: all 1s ease;
   }
+
+  .search-inp:focus{
+    box-shadow: 
+  0 0 8px #8a2be2,
+  0 0 16px #ff1493,
+  0 0 24px #ff4500,
+  0 0 32px rgba(255, 69, 0, 0.5),
+
+  inset 0 0 8px rgba(138, 43, 226, 0.4),
+  inset 0 0 16px rgba(255, 20, 147, 0.35),
+  inset 0 0 24px rgba(255, 69, 0, 0.3);
+  }
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
