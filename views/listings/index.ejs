@@ -1,87 +1,7 @@
 <% layout("/layouts/boilerplate") %> 
 
     <style>
-        .filters-wrapper{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-        #filters{
-            display: flex;
-            flex-wrap: nowrap;      
-            overflow-x: auto;       
-            scrollbar-width: none;       /* Firefox */
-            align-items: center;
-            width: 80%;
-        }
-
-        #filters::-webkit-scrollbar{
-            display: none;               /* Chrome, Edge, Safari */
-        }
-        .filter{
-            text-align: center;
-            margin-right: 2rem;
-            margin-top: 1rem;
-            opacity: 0.7;
-            flex: 0 0 auto;        
-        }
-
-        .filter:hover{
-            opacity: 1;
-            cursor: pointer;
-        }
-        .filter p {
-            font-size: 0.8rem;
-        }
-        .filter{
-             text-decoration: none;
-             color: black;
-        }
-        .tax-info{
-            display: none;
-        }
-        .tax-toggle{
-            cursor: pointer;
-            border:none;
-            border-radius:1rem;    
-            height:3rem;
-            padding:1rem;
-            margin-left:auto;
-
-            display:flex;
-            align-items:center;
-
-            background:white;
-            box-shadow:0 4px 10px rgba(0,0,0,0.15);   /* shadow */
-            transition:all 0.2s ease;
-        }
-
-        .tax-toggle:hover{
-            box-shadow:0 6px 20px rgba(0,0,0,0.2);    /* hover shadow */
-        }
-
-        .form-check-label{
-            cursor: pointer;
-        }
-
-        .scroll-btn{
-            border:none;
-            background:white;
-            width:40px;
-            height:40px;
-            border-radius:50%; 
-            box-shadow:0 4px 6px rgba(0,0,0,0.2);
-            cursor:pointer;
-            margin-left: 2rem;
-
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-        .scroll-btn:hover{
-            box-shadow:0 6px 20px rgba(0,0,0,0.2);    /* hover shadow */
-        }
+    
 
     </style>
 
@@ -162,7 +82,7 @@
         <button class="scroll-btn right" id="scrollRight">
             <div><i class="fa-solid fa-angles-right"></i></div>
         </button>
-
+     
 <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
