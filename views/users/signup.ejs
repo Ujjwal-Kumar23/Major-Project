@@ -1,7 +1,16 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="row mt-3">
-    <h1 class="col-6 offset-3">SignUp on Wonderlust</h1>
+<style>
+  .animation1 {
+    max-width: 1200px; /* 🔥 width control */
+    margin: 50px auto; /* 🔥 center me laata hai */
+    padding: 25px;
+    border-radius: 15px;
+  }
+</style>
+
+<div class="row mt-5 animation1">
+  <h1 class="col-5 offset-3">SignUp on Wonderlust</h1>
   <div class="col-6 offset-3">
     <form action="/signup" method="POST" class="needs-validation" novalidate>
       <div class="mb-3">
