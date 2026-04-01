@@ -90,6 +90,9 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+app.get("/privacy", (req, res) => {
+  res.render("users/privacy"); 
+});
 
 // Error handler
 app.use((err, req, res, next) => {
