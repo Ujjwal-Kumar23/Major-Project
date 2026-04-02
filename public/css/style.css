@@ -256,7 +256,6 @@ body {
 /* 🔥 hover pe animation */
 .animation1:hover {
   animation: moveShadow 2s linear infinite;
-
 }
 
 /* 🔥 shadow movement */
