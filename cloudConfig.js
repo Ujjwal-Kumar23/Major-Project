@@ -15,6 +15,8 @@ const storage = new CloudinaryStorage({
   },
 });
 
+console.log("CLOUD_NAME:", process.env.CLOUD_NAME);
+
 module.exports = {
   cloudinary,
   storage,
