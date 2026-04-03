@@ -1,13 +1,43 @@
+<style>
+    .alert-smooth-hide {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 1s ease;
+}
+
+.alert-floating {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 40%;
+  transition: all 2s ease;
+}
+</style>
+
 <% if (success && success.length) { %>
-<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= success %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="alert alert-success alert-dismissible fade show alert-floating" role="alert">
+  <%= success %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 <% } %>
 
 <% if (error && error.length) { %>
-<div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
-    <%= error %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="alert alert-danger alert-dismissible fade show alert-floating" role="alert">
+  <%= error %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 </div>
 <% } %>
+
+<script>
+  setTimeout(() => {
+    document.querySelectorAll(".alert").forEach(alert => {
+      alert.classList.add("alert-smooth-hide");
+
+      setTimeout(() => {
+        alert.remove();
+      }, 500);
+    });
+  }, 2000);
+</script>

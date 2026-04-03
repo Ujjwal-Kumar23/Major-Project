@@ -49,3 +49,49 @@
     <script src="/js/script.js"></script>
   </body>
 </html>
+
+<!-- <script>
+  window.addEventListener("load", () => {
+    const tooltip = document.getElementById("autoTooltip");
+
+    if (tooltip) {
+      tooltip.style.visibility = "visible";
+      tooltip.style.opacity = "1";
+
+      setTimeout(() => {
+        tooltip.style.opacity = "0";
+        setTimeout(() => {
+          tooltip.style.visibility = "hidden";
+        }, 300);
+      }, 2000);
+    }
+  });
+</script> -->
+
+<script>
+  window.addEventListener("load", () => {
+    const tooltip = document.getElementById("autoTooltip");
+
+    if (tooltip) {
+      tooltip.style.visibility = "visible";
+      tooltip.style.opacity = "1";
+
+      // ye tab tak rahega (auto hide nahi kar rahe)
+    }
+  });
+</script>
+
+<script>
+  const tooltip = document.getElementById("autoTooltip");
+
+  if (tooltip) {
+    setInterval(() => {
+      tooltip.classList.add("tooltip-animate");
+
+      setTimeout(() => {
+        tooltip.classList.remove("tooltip-animate");
+      }, 300);
+    }, 4000);
+  }
+</script>
+

@@ -73,7 +73,16 @@
         <a class="nav-link" href="/listings/new">Add new listing</a>
         <% if(!currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
+<% if (!currUser && currentPath !== "/login") { %>
+  <div class="tooltip-container">
+    <a href="/login" class="nav-link"><b>Login</b></a>
+    <a href="/login"><span id="autoTooltip" class="tooltip-text">Login</span></a>
+  </div>
+<% } else if (!currUser) { %>
+  <a href="/login" class="nav-link"><b>Login</b></a>
+<% } else { %>
+  <a href="/logout">Logout</a>
+<% } %>
         <% } %> <% if(currUser) { %>
         <a class="nav-link" href="/logout"><b>Log out</b></a>
         <% } %>

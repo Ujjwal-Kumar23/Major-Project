@@ -292,6 +292,54 @@ body {
   }
 }
 
+
+
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  z-index: 9999;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  background: linear-gradient(90deg, #8a2be2, #ff1493, #ff4500);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #ff1493 transparent;
+}
+
+@keyframes tooltipShake {
+  0% { transform: translateX(-50%) translateX(0); }
+  20% { transform: translateX(-50%) translateX(-12px); }
+  40% { transform: translateX(-50%) translateX(0); }
+  60% { transform: translateX(-50%) translateX(-9px); }
+  80% { transform: translateX(-50%) translateX(0); }
+  100% { transform: translateX(-50%) translateX(-6px); }
+}
+
+.tooltip-animate {
+  animation: tooltipShake 0.25s ease;
+}
+
+
  .navbar {
   position: relative;
   background: white;
