@@ -1,40 +1,5 @@
 <% layout("/layouts/boilerplate") %> 
 
-    <style>
-    .filter {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  margin-right: 2rem;
-}
-
-/* 🔥 underline (initial hidden) */
-.filter::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0%;
-  height: 4px;
-  border-radius: 10px;
-
-  background: linear-gradient(90deg, #8a2be2, #ff1493, #ff4500);
-  transition: all 0.2s ease;
-}
-
-/* 🔥 hover pe glow */
-.filter:hover::after {
-  width: 100%;
-  box-shadow:
-    0 0 8px #8a2be2,
-    0 0 16px #ff1493,
-    0 0 24px #ff4500;
-}
-    </style>
 
     <div class="filters-wrapper sticky-filters">
 

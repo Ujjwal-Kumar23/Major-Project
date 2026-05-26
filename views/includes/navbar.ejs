@@ -71,9 +71,9 @@
 
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Add new listing</a>
-        <% if(!currUser) { %>
+          <% if(typeof currUser !== 'undefined' && !currUser) { %>
         <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-<% if (!currUser && currentPath !== "/login") { %>
+<% if((typeof currUser === 'undefined' || !currUser) && currentPath !== "/login") { %>
   <div class="tooltip-container">
     <a href="/login" class="nav-link"><b>Login</b></a>
     <a href="/login"><span id="autoTooltip" class="tooltip-text">Login</span></a>

@@ -145,18 +145,21 @@ body {
 .filter {
   text-align: center;
   margin-right: 2rem;
-  margin-top: 0.2rem;
+  margin-top: 1.5rem;
   opacity: 0.7;
   flex: 0 0 auto;
+  height: 4rem;
+  transition: transform 0.2s ease;
 }
 
 .filter:hover {
   opacity: 1;
   cursor: pointer;
+  transform: scale(1.1);
 }
 .filter p {
   font-size: 0.8rem;
-  margin-bottom: 0.1px;
+  margin-bottom: 0.2px;
 }
 .filter {
   text-decoration: none;
